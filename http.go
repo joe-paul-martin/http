@@ -87,3 +87,9 @@ var aLongTimeAgo = time.Unix(1, 0)
 // build tag is set. That means h2_bundle.go isn't compiled in and we
 // shouldn't try to use it.
 var omitBundledHTTP2 bool
+
+// contextKey is a value for use with context.WithValue. It's used as
+// a pointer so it fits in an interface without allocation.
+type contextKey struct {
+	name string
+}
